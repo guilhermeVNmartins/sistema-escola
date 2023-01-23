@@ -9,19 +9,32 @@
     <h3 class="titulo">Curso</h3>
     <label class="subtitulo">Nome:</label>
     <form>
-      <input class='barra' type="search" >
+      <input class='barra' type="search">
     </form>    
-    <button class="pesquisar" onclick="alert('Botão clicado!')">Pesquisar</button>
+    <button class="pesquisar" >Pesquisar</button>
     <table class="tabela">
-      <tr>
-        <th></th>
-        <th>Código</th>
-        <th>Nome</th>
-        <th>Instrutor</th>
-        <th>Local</th>
-        <th>Carga Horaria</th>
-        <th>Data Inicio</th>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Código</th>
+          <th>Nome</th>
+          <th>Instrutor</th>
+          <th>Local</th>
+          <th>Carga Horaria</th>
+          <th>Data Inicio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of cursos" class="corpo-tabela">
+          <td></td>
+          <td>{{ item.codigo }}</td>
+          <td>{{ item.nome }}</td>
+          <td>{{ item.instrutor }}</td>
+          <td>{{ item.local }}</td>
+          <td>{{ item.carga }}</td>
+          <td>{{ item.inicio }}</td>
       </tr>
+      </tbody>
     </table>
     <button class="iniciar" onclick="window.location.href = 'cadastro';">Iniciar</button>
   </div>
